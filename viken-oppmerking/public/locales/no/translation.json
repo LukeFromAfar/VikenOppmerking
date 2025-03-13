@@ -13,5 +13,14 @@
     "road_lights_crosswalks": "Gatelys & Gangfelt",
     "school_yards": "Skolegårder",
     "industrial_marking": "Industrimerking",
-    "contact_us": "Kontakt oss"
+    "contact_us": "Kontakt oss",
+
+    "project_1_title": "Prosjekt 1",
+    "project_1_description": "Beskrivelse av Prosjekt 1",
+    "project_2_title": "Prosjekt 2",
+    "project_2_description": "Beskrivelse av Prosjekt 2",
+    "material_1_title": "Materiale 1",
+    "material_1_description": "Beskrivelse av Materiale 1",
+    "material_2_title": "Materiale 2",
+    "material_2_description": "Beskrivelse av Materiale 2"
   }

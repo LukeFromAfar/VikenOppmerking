@@ -13,5 +13,14 @@
     "road_lights_crosswalks": "Road Lights & Crosswalks",
     "school_yards": "School Yards",
     "industrial_marking": "Industrial Marking",
-    "contact_us": "Contact Us"
+    "contact_us": "Contact Us",
+
+    "project_1_title": "Project 1",
+    "project_1_description": "Description of Project 1",
+    "project_2_title": "Project 2",
+    "project_2_description": "Description of Project 2",
+    "material_1_title": "Material 1",
+    "material_1_description": "Description of Material 1",
+    "material_2_title": "Material 2",
+    "material_2_description": "Description of Material 2"
   }
