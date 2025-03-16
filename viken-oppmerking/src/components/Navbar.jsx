@@ -20,64 +20,66 @@ export default function Navbar() {
             <img src="/VikenOppmerkingLogo.svg" alt="Viken Oppmerking Logo" className="max-h-16" />
           </Link>
           
-          <div className="hidden md:flex space-x-6">
-            <Link to="/" className="text-gray-600 hover:text-orange-600">{t('home')}</Link>
-            <Link to="/services" className="text-gray-600 hover:text-orange-600">{t('services')}</Link>
-            <Link to="/projects" className="text-gray-600 hover:text-orange-600">{t('projects')}</Link>
-            <Link to="/materials" className="text-gray-600 hover:text-orange-600">{t('materials')}</Link>
-            <Link to="/contact" className="text-gray-600 hover:text-orange-600">{t('contact')}</Link>
-          </div>
-          
-          <div className="md:hidden">
-            <button 
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-600 hover:text-orange-600 focus:outline-none bg-transparent p-2"
-            >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
-
-          <div className="relative">
-            <HeadlessMenu>
-              <MenuButton className="text-gray-600 hover:text-gray-800 focus:outline-none px-4 py-2  rounded-md">
-                <Globe size={16} />
-              </MenuButton>
-              <Transition
-                enter="transition ease-out duration-100"
-                enterFrom="transform opacity-0 scale-95"
-                enterTo="transform opacity-100 scale-100"
-                leave="transition ease-in duration-75"
-                leaveFrom="transform opacity-100 scale-100"
-                leaveTo="transform opacity-0 scale-95"
+          <div className="flex items-center ml-auto space-x-6">
+            <div className="hidden md:flex space-x-6">
+              <Link to="/" className="text-gray-600 hover:text-orange-600">{t('home')}</Link>
+              <Link to="/services" className="text-gray-600 hover:text-orange-600">{t('services')}</Link>
+              <Link to="/projects" className="text-gray-600 hover:text-orange-600">{t('projects')}</Link>
+              <Link to="/materials" className="text-gray-600 hover:text-orange-600">{t('materials')}</Link>
+              <Link to="/contact" className="text-gray-600 hover:text-orange-600">{t('contact')}</Link>
+            </div>
+            
+            <div className="md:hidden">
+              <button 
+                onClick={() => setIsOpen(!isOpen)}
+                className="text-gray-600 hover:text-orange-600 focus:outline-none bg-transparent p-2"
               >
-                <MenuItems className="absolute right-0 mt-2 w-32 bg-white shadow-lg rounded-md py-1">
-                  <MenuItem>
-                    {({ active }) => (
-                      <button
-                        onClick={() => changeLanguage('en')}
-                        className={`${
-                          active ? 'bg-gray-100' : ''
-                        } block w-full text-left px-4 py-2 text-gray-700`}
-                      >
-                        English
-                      </button>
-                    )}
-                  </MenuItem>
-                  <MenuItem>
-                    {({ active }) => (
-                      <button
-                        onClick={() => changeLanguage('no')}
-                        className={`${
-                          active ? 'bg-gray-100' : ''
-                        } block w-full text-left px-4 py-2 text-gray-700`}
-                      >
-                        Norsk
-                      </button>
-                    )}
-                  </MenuItem>
-                </MenuItems>
-              </Transition>
-            </HeadlessMenu>
+                {isOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
+
+            <div className="relative">
+              <HeadlessMenu>
+                <MenuButton className="text-gray-600 hover:text-gray-800 focus:outline-none px-4 py-2">
+                  <Globe size={16} />
+                </MenuButton>
+                <Transition
+                  enter="transition ease-out duration-100"
+                  enterFrom="transform opacity-0 scale-95"
+                  enterTo="transform opacity-100 scale-100"
+                  leave="transition ease-in duration-75"
+                  leaveFrom="transform opacity-100 scale-100"
+                  leaveTo="transform opacity-0 scale-95"
+                >
+                  <MenuItems className="absolute right-0 mt-2 w-32 bg-white shadow-lg rounded-md py-1">
+                    <MenuItem>
+                      {({ active }) => (
+                        <button
+                          onClick={() => changeLanguage('en')}
+                          className={`${
+                            active ? 'bg-gray-100' : ''
+                          } block w-full text-left px-4 py-2 text-gray-700`}
+                        >
+                          English
+                        </button>
+                      )}
+                    </MenuItem>
+                    <MenuItem>
+                      {({ active }) => (
+                        <button
+                          onClick={() => changeLanguage('no')}
+                          className={`${
+                            active ? 'bg-gray-100' : ''
+                          } block w-full text-left px-4 py-2 text-gray-700`}
+                        >
+                          Norsk
+                        </button>
+                      )}
+                    </MenuItem>
+                  </MenuItems>
+                </Transition>
+              </HeadlessMenu>
+            </div>
           </div>
         </div>
         
