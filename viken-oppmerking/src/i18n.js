@@ -8,11 +8,14 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    supportedLngs: ['en', 'no'],
-    fallbackLng: 'en',
+    supportedLngs: ['no', 'en'],
+    fallbackLng: 'no',
     detection: {
-      order: ['queryString', 'cookie'],
-      caches: ['cookie']
+      order: ['queryString', 'cookie', 'localStorage', 'navigator'],
+      lookupQuerystring: 'lng',
+      lookupCookie: 'i18next',
+      lookupLocalStorage: 'i18nextLng',
+      caches: ['localStorage', 'cookie']
     },
     backend: {
       loadPath: '/locales/{{lng}}/translation.json',
@@ -21,5 +24,10 @@ i18n
       useSuspense: false,
     },
   });
+
+  const currentLanguage = i18n.language;
+  if (!currentLanguage || (currentLanguage !== 'no' && currentLanguage !== 'en')) {
+    i18n.changeLanguage('no');
+  }
 
 export default i18n;
