@@ -21,15 +21,6 @@ const dataPath = path.join(__dirname, '../src/data');
   }
 });
 
-// Category patterns - adjust based on your actual file naming patterns
-const categoryPatterns = {
-  'parking': ['parking', 'garage', 'p-', 'lot'],
-  'school': ['school', 'yard', 'playground'],
-  'cleaning': ['cleaning', 'wash', 'vask'],
-  'fixing': ['repair', 'fix', 'asphalt', 'road'],
-  'featured': ['featured']
-};
-
 // Process images
 try {
   // Read all files in the projects directory
@@ -55,34 +46,18 @@ try {
   
   // Process each image and build the JSON data
   const imageData = imageFiles.map(file => {
-    const lowercaseFilename = file.toLowerCase();
-    const categories = [];
-    
-    // Determine categories based on filename
-    Object.entries(categoryPatterns).forEach(([category, patterns]) => {
-      if (patterns.some(pattern => lowercaseFilename.includes(pattern))) {
-        categories.push(category);
-      }
-    });
-    
-    // If no categories were matched, put in "other"
-    if (categories.length === 0) {
-      categories.push('other');
-    }
-    
     // Generate a human-readable description from the filename
     let description = file
       .replace(/\.[^/.]+$/, '')  // Remove extension
       .replace(/-/g, ' ')        // Replace hyphens with spaces
       .replace(/_/g, ' ')        // Replace underscores with spaces
-      .replace(/\d+/g, '')       // Remove numbers
       .trim()
       .split(' ')
       .filter(Boolean)
       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
       .join(' ');
     
-    if (description.length < 3) {
+    if (description.length < 3 || !/[a-zA-Z]/.test(description)) {
       description = `Project image ${file}`;
     }
     
@@ -91,12 +66,14 @@ try {
     const thumbnailPath = path.join(thumbnailsPath, file);
     const fullsizeOutputPath = path.join(fullsizePath, file);
     
-    // Create optimized thumbnail (640px width)
+    // Create optimized thumbnail (640px width) with orientation preserved
     const thumbnailPromise = sharp(inputPath)
+      .rotate() // This will auto-rotate based on EXIF orientation
       .resize(640, null, {
         fit: 'inside',
         withoutEnlargement: true
       })
+      .withMetadata() // Preserve metadata including orientation
       .jpeg({ quality: 80 })
       .toFile(thumbnailPath)
       .then(() => {
@@ -108,12 +85,14 @@ try {
     
     imageProcessingPromises.push(thumbnailPromise);
     
-    // Create optimized fullsize version (1920px width)
+    // Create optimized fullsize version (1920px width) with orientation preserved
     const fullsizePromise = sharp(inputPath)
+      .rotate() // This will auto-rotate based on EXIF orientation
       .resize(1920, null, {
         fit: 'inside',
         withoutEnlargement: true
       })
+      .withMetadata() // Preserve metadata including orientation
       .jpeg({ quality: 90 })
       .toFile(fullsizeOutputPath)
       .then(() => {
@@ -128,7 +107,6 @@ try {
     // Return image data for JSON
     return {
       filename: file,
-      categories,
       description
     };
   });

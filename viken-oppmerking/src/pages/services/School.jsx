@@ -1,8 +1,13 @@
 import ServiceDetail from '../../components/ServiceDetail';
-import ServiceGallery from '../../components/ServiceGallery';
+import ProjectGallery from '../../components/ProjectGallery';
+import { useTranslation } from 'react-i18next';
+// Fix the image import path to match the actual filename
+import playgroundImage from '/images/services/PlaygroundMarking.jpg';
 
 export default function SchoolService() {
-  const heroImage = null;
+  // Update to use the playground image
+  const heroImage = playgroundImage;
+  const { t } = useTranslation();
   
   return (
     <>
@@ -10,7 +15,10 @@ export default function SchoolService() {
         serviceKey="school_service"
         heroImage={heroImage}
       />
-      <ServiceGallery category="school" />
+      <div className="container mx-auto px-4 border-t border-gray-200 mt-12 pb-16">
+        <h2 className="text-2xl font-bold pt-16 mb-8 text-center">{t('gallery')}</h2>
+        <ProjectGallery />
+      </div>
     </>
   );
 }

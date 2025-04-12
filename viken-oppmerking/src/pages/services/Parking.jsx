@@ -1,16 +1,22 @@
 import ServiceDetail from '../../components/ServiceDetail';
-import ServiceGallery from '../../components/ServiceGallery';
+import ProjectGallery from '../../components/ProjectGallery';
+import { useTranslation } from 'react-i18next';
+import parkingImage from '/images/services/PaintingParkingGarage.jpg';
 
-export default function FixingService() {
-  const heroImage = null;
+export default function ParkingService() {
+  const heroImage = parkingImage;
+  const { t } = useTranslation();
   
   return (
     <>
       <ServiceDetail 
-        serviceKey="fixing_service"
+        serviceKey="parking_service"
         heroImage={heroImage}
       />
-      <ServiceGallery category="fixing" />
+      <div className="container mx-auto px-4 border-t border-gray-200 mt-12 pb-16">
+        <h2 className="text-2xl font-bold pt-16 mb-8 text-center">{t('gallery')}</h2>
+        <ProjectGallery />
+      </div>
     </>
   );
 }

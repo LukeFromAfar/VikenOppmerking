@@ -19,7 +19,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">{t('contact')}</h3>
             <p className="flex items-center mb-2">
-              <Phone size={18} className="mr-2" /> 99232486
+              <Phone size={18} className="mr-2" /> +47 992 32 486
             </p>
             <p className="flex items-center mb-2">
               <Mail size={18} className="mr-2" /> vikenoppmerking@gmail.com
@@ -34,14 +34,13 @@ export default function Footer() {
             <ul>
               <li className="mb-2"><Link to="/" className="text-white hover:text-[rgb(255,169,0)]">{t('home')}</Link></li>
               <li className="mb-2"><Link to="/services" className="text-white hover:text-[rgb(255,169,0)]">{t('services')}</Link></li>
-              <li className="mb-2"><Link to="/projects" className="text-white hover:text-[rgb(255,169,0)]">{t('projects')}</Link></li>
-              <li className="mb-2"><Link to="/materials" className="text-white hover:text-[rgb(255,169,0)]">{t('materials')}</Link></li>
+              {/* <li className="mb-2"><Link to="/materials" className="text-white hover:text-[rgb(255,169,0)]">{t('materials')}</Link></li> */}
               <li><Link to="/contact" className="text-white hover:text-[rgb(255,169,0)]">{t('contact')}</Link></li>
             </ul>
           </div>
         </div>
         <div className="border-t border-gray-700 mt-8 pt-6 text-center">
-          <p>&copy; {new Date().getFullYear()} Viken Oppmerking. {t('all_rights_reserved')}</p>
+          <p>&copy; {new Date().getFullYear()} Viken Oppmerking</p>
         </div>
       </div>
     </footer>

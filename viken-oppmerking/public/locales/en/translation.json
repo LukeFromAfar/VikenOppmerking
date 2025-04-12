@@ -6,7 +6,6 @@
   "materials": "Materials",
   "contact": "Contact",
   "navigation": "Navigation",
-  "all_rights_reserved": "All rights reserved",
 
   "professional_marking": "Professional Marking in Viken",
   "high_quality_services": "We provide high-quality marking services for all types of surfaces",
@@ -64,6 +63,7 @@
   "cleaning_service_description_1": "We offer thorough cleaning and washing of garage surfaces, parking lots, and other areas.",
   "cleaning_service_description_2": "This is often a necessary step before marking to ensure the best possible result and durability.",
   "cleaning_service_description_3": "We use professional equipment and environmentally friendly cleaning agents to do the job efficiently.",
+  "cleaning_partnership_note": "Our washing services are performed in collaboration with Asker Bærum Vaktmester Kompani.",
   
   "fixing_service_title": "Road Repair",
   "fixing_service_description_1": "We repair asphalt roads, footways, and other surfaces.",
@@ -120,5 +120,11 @@
   "sending": "Sending...",
 
   "project_gallery": "Project Gallery",
-  "no_images_available": "No images available for this category"
+  "no_images_available": "No images available for this category",
+  
+  "page_not_found": "Page Not Found",
+  "page_not_found_message": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.",
+  "go_home": "Go Home",
+  "go_back": "Go Back",
+  "see_more": "See More"
 }

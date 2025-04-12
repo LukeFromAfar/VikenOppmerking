@@ -6,7 +6,6 @@
   "materials": "Materialer",
   "contact": "Kontakt",
   "navigation": "Navigasjon",
-  "all_rights_reserved": "Alle rettigheter forbeholdes",
 
   "professional_marking": "Profesjonell Oppmerking i Viken",
   "high_quality_services": "Vi leverer høykvalitets oppmerkingstjenester for alle typer overflater",
@@ -64,6 +63,7 @@
   "cleaning_service_description_1": "Vi tilbyr grundig rengjøring og vask av garasjeflater, parkeringsplasser og andre områder.",
   "cleaning_service_description_2": "Dette er ofte et nødvendig trinn før oppmerking for å sikre best mulig resultat og holdbarhet.",
   "cleaning_service_description_3": "Vi bruker profesjonelt utstyr og miljøvennlige rengjøringsmidler for å gjøre jobben effektivt.",
+  "cleaning_partnership_note": "Våre vasketjenester utføres i samarbeid med Asker Bærum Vaktmester Kompani.",
 
   "fixing_service_title": "Reparasjon av vei",
   "fixing_service_description_1": "Vi reparerer baner, gangveier og andre veier.",
@@ -120,5 +120,10 @@
   "sending": "Sender...",
 
   "project_gallery": "Prosjektgalleri",
-  "no_images_available": "Ingen bilder tilgjengelig for denne kategorien"
+  "no_images_available": "Ingen bilder tilgjengelig for denne kategorien",
+  "page_not_found": "Siden ble ikke funnet",
+  "page_not_found_message": "Siden du leter etter kan ha blitt fjernet, fått navnet endret eller er midlertidig utilgjengelig.",
+  "go_home": "Gå til forsiden",
+  "go_back": "Gå tilbake",
+  "see_more": "Se mer"
 }

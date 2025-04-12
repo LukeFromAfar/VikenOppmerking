@@ -43,11 +43,6 @@ export default function HomePage() {
     }
   ];
 
-  const featuredProjects = [
-    { id: 1, title: t("project_1_title"), image: "/images/projects/placeholder-1.jpg" },
-    { id: 2, title: t("project_2_title"), image: "/images/projects/placeholder-2.jpg" },
-  ];
-
   const testimonials = [
     { 
       id: 1, 
@@ -144,54 +139,20 @@ export default function HomePage() {
               </Link>
             </div>
             <div className="md:w-1/2 rounded-lg overflow-hidden shadow-lg">
-              <div className="bg-gray-200 h-80 flex items-center justify-center">
-                <p className="text-gray-500">{t('company_image')}</p>
-                {/* Replace with actual image when available */}
-                {/* <img src="/images/company/team-photo.jpg" alt="Viken Oppmerking Team" className="w-full h-full object-cover" /> */}
+              <div className="bg-white h-80 flex items-center justify-center p-6">
+                <img 
+                  src="/VikenOppmerkingLogo.svg" 
+                  alt="Viken Oppmerking Logo" 
+                  className="max-h-full max-w-full object-contain"
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
-      
-      {/* Featured Projects Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4">{t('featured_projects')}</h2>
-          <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-            {t('featured_projects_description')}
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {featuredProjects.map(project => (
-              <div key={project.id} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
-                <div className="h-64 bg-gray-200">
-                  {/* Replace with actual project images when available */}
-                  <div className="w-full h-full flex items-center justify-center">
-                    <p className="text-gray-500">{t('project_image')}</p>
-                  </div>
-                  {/* <img src={project.image} alt={project.title} className="w-full h-full object-cover" /> */}
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <Link to="/projects" className="text-[rgb(255,169,0)] font-medium hover:underline flex items-center mt-2">
-                    {t('view_project')} <ArrowRight className="ml-1 w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          <div className="mt-12 text-center">
-            <Link to="/projects" className="inline-block bg-[rgb(255,169,0)] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[rgb(235,149,0)] transition-colors duration-300">
-              {t('view_all_projects')}
-            </Link>
-          </div>
-        </div>
-      </section>
-      
+
       {/* Testimonials Section */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">{t('what_clients_say')}</h2>
           
@@ -212,7 +173,7 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
       
       {/* Contact CTA Section */}
       <section className="py-20 bg-[rgb(255,169,0)] text-white">
@@ -226,35 +187,6 @@ export default function HomePage() {
               <Link to="/contact" className="inline-block bg-white text-[rgb(255,169,0)] px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors duration-300">
                 {t('contact_us')}
               </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Quick Contact Info */}
-      <section className="py-16 bg-gray-800 text-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="flex items-center">
-              <Phone className="mr-4 w-6 h-6 text-[rgb(255,169,0)]" />
-              <div>
-                <div className="text-sm text-gray-300">{t('call_us')}</div>
-                <a href="tel:+4712345678" className="text-lg hover:text-[rgb(255,169,0)]">+47 123 45 678</a>
-              </div>
-            </div>
-            <div className="flex items-center">
-              <Mail className="mr-4 w-6 h-6 text-[rgb(255,169,0)]" />
-              <div>
-                <div className="text-sm text-gray-300">{t('email_us')}</div>
-                <a href="mailto:info@vikenoppmerking.no" className="text-lg hover:text-[rgb(255,169,0)]">info@vikenoppmerking.no</a>
-              </div>
-            </div>
-            <div className="flex items-center">
-              <MapPin className="mr-4 w-6 h-6 text-[rgb(255,169,0)]" />
-              <div>
-                <div className="text-sm text-gray-300">{t('visit_us')}</div>
-                <address className="text-lg not-italic">Viken, Norge</address>
-              </div>
             </div>
           </div>
         </div>

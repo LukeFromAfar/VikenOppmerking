@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { ParkingCircle, PaintBucket, School, Warehouse, ArrowRight } from 'lucide-react';
+import ProjectGallery from '../components/ProjectGallery';
 
 export default function ServicesPage() {
   const { t } = useTranslation();
@@ -104,6 +105,17 @@ export default function ServicesPage() {
             <h3 className="font-bold text-xl mb-2">{t('execution')}</h3>
             <p className="text-gray-600">{t('execution_description')}</p>
           </div>
+        </div>
+      </div>
+      
+      {/* Project Gallery with proper title */}
+      <div className="border-t border-gray-200 mt-16">
+        <h2 className="text-3xl font-bold pt-16 mb-8 text-center">{t('featured_projects')}</h2>
+        <p className="text-center text-gray-600 mb-16 max-w-3xl mx-auto">
+          {t('featured_projects_description')}
+        </p>
+        <div className="pb-16">
+          <ProjectGallery />
         </div>
       </div>
     </div>
