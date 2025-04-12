@@ -101,5 +101,24 @@
   "contact_cta_description": "Kontakt oss i dag for et gratis tilbud og konsultasjon. Vi er klare til å hjelpe deg med dine oppmerkingsbehov.",
   "call_us": "Ring oss",
   "email_us": "Send e-post",
-  "visit_us": "Besøk oss"
+  "visit_us": "Besøk oss",
+
+  "contact_information": "Kontaktinformasjon",
+  "address": "Adresse",
+  "phone": "Telefon",
+  "email": "E-post",
+  "send_inquiry": "Send forespørsel",
+  "form_success": "Takk for din henvendelse. Vi vil svare så snart som mulig.",
+  "full_name": "Fullt navn",
+  "company_name": "Bedriftsnavn (valgfritt)",
+  "phone_number": "Telefonnummer (valgfritt)",
+  "work_address": "Adresse til arbeidsområdet",
+  "subject": "Emne",
+  "message": "Melding",
+  "field_required": "Dette feltet er påkrevd",
+  "invalid_email": "Vennligst oppgi en gyldig e-postadresse",
+  "sending": "Sender...",
+
+  "project_gallery": "Prosjektgalleri",
+  "no_images_available": "Ingen bilder tilgjengelig for denne kategorien"
 }

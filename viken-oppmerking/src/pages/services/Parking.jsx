@@ -1,15 +1,16 @@
 import ServiceDetail from '../../components/ServiceDetail';
+import ServiceGallery from '../../components/ServiceGallery';
 
-export default function ParkingService() {
-  // You can add specific images for this service here
-  const heroImage = null; // Replace with your image path
-  const galleryImages = []; // Add your gallery images here
+export default function FixingService() {
+  const heroImage = null;
   
   return (
-    <ServiceDetail 
-      serviceKey="parking_service"
-      heroImage={heroImage}
-      galleryImages={galleryImages}
-    />
+    <>
+      <ServiceDetail 
+        serviceKey="fixing_service"
+        heroImage={heroImage}
+      />
+      <ServiceGallery category="fixing" />
+    </>
   );
 }

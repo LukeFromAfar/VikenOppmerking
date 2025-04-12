@@ -93,8 +93,6 @@ export default function Navbar() {
                   </Link>
                 </div>
               </div>
-              
-              <Link to="/projects" className="text-gray-600 hover:text-orange-600">{t('projects')}</Link>
               <Link to="/materials" className="text-gray-600 hover:text-orange-600">{t('materials')}</Link>
               <Link to="/contact" className="text-gray-600 hover:text-orange-600">{t('contact')}</Link>
             </div>
@@ -212,7 +210,6 @@ export default function Navbar() {
                 )}
               </div>
               
-              <Link to="/projects" className="py-2 text-gray-600 hover:text-orange-600" onClick={() => setIsOpen(false)}>{t('projects')}</Link>
               <Link to="/materials" className="py-2 text-gray-600 hover:text-orange-600" onClick={() => setIsOpen(false)}>{t('materials')}</Link>
               <Link to="/contact" className="py-2 text-gray-600 hover:text-orange-600" onClick={() => setIsOpen(false)}>{t('contact')}</Link>
             </div>

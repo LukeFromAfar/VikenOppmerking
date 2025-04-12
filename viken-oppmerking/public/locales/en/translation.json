@@ -101,5 +101,24 @@
   "contact_cta_description": "Contact us today for a free quote and consultation. We're ready to help you with your marking needs.",
   "call_us": "Call us",
   "email_us": "Email us",
-  "visit_us": "Visit us"
+  "visit_us": "Visit us",
+
+  "contact_information": "Contact Information",
+  "address": "Address",
+  "phone": "Phone",
+  "email": "Email",
+  "send_inquiry": "Send Inquiry",
+  "form_success": "Thank you for your message. We will respond as soon as possible.",
+  "full_name": "Full Name",
+  "company_name": "Company Name (optional)",
+  "phone_number": "Phone Number (optional)",
+  "work_address": "Address of the work area",
+  "subject": "Subject",
+  "message": "Message",
+  "field_required": "This field is required",
+  "invalid_email": "Please enter a valid email address",
+  "sending": "Sending...",
+
+  "project_gallery": "Project Gallery",
+  "no_images_available": "No images available for this category"
 }

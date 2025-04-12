@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import bakgrunnsbilde from '../images/projects/Bakgrunn.jpg';
 
 export default function HomePage() {
   const { t } = useTranslation();
@@ -64,9 +65,17 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="bg-[rgb(255,169,0)] text-white py-20">
-        <div className="container mx-auto px-4">
+      {/* Hero Section with Background Image */}
+      <section 
+        className="relative text-white h-dvh flex flex-col items-center justify-center" 
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${bakgrunnsbilde})`,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <div className="container mx-auto px-4 relative z-10 mb-24">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 max-w-3xl">
             {t('professional_marking')}
           </h1>
@@ -74,10 +83,10 @@ export default function HomePage() {
             {t('high_quality_services')}
           </p>
           <div className="flex flex-wrap gap-4">
-            <Link to="/contact" className="bg-white text-[rgb(255,169,0)] px-6 py-3 rounded-lg font-semibold flex items-center">
+            <Link to="/contact" className="text-white bg-[rgb(255,169,0)] px-6 py-3 rounded-lg font-semibold flex items-center">
               {t('get_free_quote')} <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
-            <Link to="/services" className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-semibold flex items-center">
+            <Link to="/services" className="bg-transparent border-2 border-[rgb(255,169,0)] text-white px-6 py-3 rounded-lg font-semibold flex items-center">
               {t('our_services')} 
             </Link>
           </div>
