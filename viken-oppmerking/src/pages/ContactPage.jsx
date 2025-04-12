@@ -15,18 +15,25 @@ export default function ContactPage() {
     try {
       // This encoding is required for Netlify forms
       const formData = new FormData();
-      Object.entries(data).forEach(([key, value]) => {
-        formData.append(key, value);
-      });
       
       // Add form-name field for Netlify form identification
       formData.append('form-name', 'contact');
       
-      // Submit the form
-      await fetch('/', {
-        method: 'POST',
-        body: formData,
+      // Add all form fields to the FormData object
+      Object.entries(data).forEach(([key, value]) => {
+        formData.append(key, value);
       });
+      
+      // Submit the form using fetch with the proper encoding
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      });
+      
+      if (!response.ok) {
+        throw new Error(`Form submission failed: ${response.status}`);
+      }
 
       // Show success message and reset form
       setIsSubmitted(true);
@@ -103,8 +110,8 @@ export default function ContactPage() {
               </div>
             </div>
             
-            {/* Map Placeholder - Replace with actual Google Maps embed */}
-            <div className="mt-8 h-48 bg-gray-200 rounded-lg flex items-center justify-center">
+            {/* Map */}
+            <div className="mt-8 h-48 rounded-lg">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2003.2721046518852!2d10.4336991!3d59.8445741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416c9ca00d4e69%3A0x99d2449ceb44e4c2!2sBrendsrudveien%2022%2C%201383%20Asker!5e0!3m2!1sno!2sno!4v1654245566769!5m2!1sno!2sno" 
                 width="100%" 
@@ -137,13 +144,11 @@ export default function ContactPage() {
               name="contact"
               method="POST"
               data-netlify="true" 
-              netlify-honeypot="bot-field"
               onSubmit={handleSubmit(onSubmit)}
               className="space-y-4"
             >
               {/* Netlify form detection - hidden */}
               <input type="hidden" name="form-name" value="contact" />
-              <input type="hidden" name="bot-field" />
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Full Name */}
@@ -233,8 +238,11 @@ export default function ContactPage() {
                   className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[rgb(255,169,0)] focus:border-transparent outline-none transition ${
                     errors.address ? 'border-red-500' : 'border-gray-300'
                   }`}
-                  {...register('address', { required: false })}
+                  {...register('address', { required: true })}
                 />
+                {errors.address && (
+                  <p className="mt-1 text-sm text-red-600">{t('field_required')}</p>
+                )}
               </div>
               
               {/* Subject */}
@@ -274,9 +282,6 @@ export default function ContactPage() {
                   <p className="mt-1 text-sm text-red-600">{t('field_required')}</p>
                 )}
               </div>
-              
-              {/* reCAPTCHA */}
-              <div className="mt-4" data-netlify-recaptcha="true"></div>
               
               {/* Submit Button */}
               <div className="mt-6">
