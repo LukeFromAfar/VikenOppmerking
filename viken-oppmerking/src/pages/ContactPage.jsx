@@ -137,12 +137,13 @@ export default function ContactPage() {
               name="contact"
               method="POST"
               data-netlify="true" 
-              data-netlify-recaptcha="true"
+              netlify-honeypot="bot-field"
               onSubmit={handleSubmit(onSubmit)}
               className="space-y-4"
             >
               {/* Netlify form detection - hidden */}
               <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="bot-field" />
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Full Name */}
